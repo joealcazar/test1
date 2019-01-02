@@ -1,0 +1,9 @@
+package com.myspace.pocservicemanifesto;
+
+import java.lang.Number;
+
+rule "RequestedDateInvalid"
+	dialect "mvel"
+	when
+	then
+end
