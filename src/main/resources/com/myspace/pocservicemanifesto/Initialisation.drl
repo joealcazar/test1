@@ -1,2 +1,32 @@
 package com.myspace.pocservicemanifesto;
 
+
+import com.myspace.pocservicemanifesto.Order;
+import com.myspace.pocservicemanifesto.OrderLine;
+// declare any global variables here
+// TODO:add a proper logging layer
+// import org.apache.log4j.Logger
+// global Logger LOGGER;
+
+rule "Setting default values on Order"
+	dialect "mvel"
+	ruleflow-group "initialisation-rules"
+	no-loop true
+	when
+	    order : Order( )
+	then
+	    System.out.println("Rule fired : [" + drools.getRule().getName()+"]");
+	    order.setMessage("OK")
+	    order.setMessageType("INFO");
+end
+
+rule "Setting default values on OrderLine"
+	dialect "mvel"
+	ruleflow-group "initialisation-rules"
+	no-loop true
+	when
+	    orderLine : OrderLine( )
+	then
+	    System.out.println("Rule fired : [" + drools.getRule().getName()+"]");
+	    
+end
