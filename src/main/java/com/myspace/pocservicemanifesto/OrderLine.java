@@ -6,12 +6,46 @@ package com.myspace.pocservicemanifesto;
 
 public class OrderLine implements java.io.Serializable {
 
-    static final long serialVersionUID = 1L;
+	static final long serialVersionUID = 1L;
 
-    public OrderLine() {
-    }
+	@org.kie.api.definition.type.Label(value = "Order Id")
+	private long orderId;
+	@org.kie.api.definition.type.Label(value = "Product Number")
+	private long productId;
+	@org.kie.api.definition.type.Label(value = "Product Type")
+	private java.lang.String productType;
 
+	public OrderLine() {
+	}
 
+	public long getOrderId() {
+		return this.orderId;
+	}
 
+	public void setOrderId(long orderId) {
+		this.orderId = orderId;
+	}
+
+	public long getProductId() {
+		return this.productId;
+	}
+
+	public void setProductId(long productId) {
+		this.productId = productId;
+	}
+
+	public java.lang.String getProductType() {
+		return this.productType;
+	}
+
+	public void setProductType(java.lang.String productType) {
+		this.productType = productType;
+	}
+
+	public OrderLine(long orderId, long productId, java.lang.String productType) {
+		this.orderId = orderId;
+		this.productId = productId;
+		this.productType = productType;
+	}
 
 }
