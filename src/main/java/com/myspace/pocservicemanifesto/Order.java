@@ -8,16 +8,22 @@ public class Order implements java.io.Serializable {
 
 	static final long serialVersionUID = 1L;
 
-	@org.kie.api.definition.type.Label(value = "Order Number")
+	@org.kie.api.definition.type.Label("Order Number")
 	private long orderId;
-	@org.kie.api.definition.type.Label(value = "Requested Date")
+	@org.kie.api.definition.type.Label("Requested Date")
 	private java.time.OffsetDateTime requestedDate;
-	@org.kie.api.definition.type.Label(value = "Order Date")
+	@org.kie.api.definition.type.Label("Order Date")
 	private java.time.OffsetDateTime orderDate;
-	@org.kie.api.definition.type.Label(value = "Shipping Condition")
+	@org.kie.api.definition.type.Label("Shipping Condition")
 	private java.lang.String shippingCondition;
-	@org.kie.api.definition.type.Label(value = "Distance Between JobSite & Plant")
+	@org.kie.api.definition.type.Label("Distance Between JobSite & Plant")
 	private long distanceJobSite_Plant;
+
+	@org.kie.api.definition.type.Label(value = "Message")
+	private java.lang.String message;
+
+	@org.kie.api.definition.type.Label(value = "Message Type")
+	private java.lang.String messageType;
 
 	public Order() {
 	}
@@ -62,14 +68,33 @@ public class Order implements java.io.Serializable {
 		this.distanceJobSite_Plant = distanceJobSite_Plant;
 	}
 
+	public java.lang.String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(java.lang.String message) {
+		this.message = message;
+	}
+
+	public java.lang.String getMessageType() {
+		return this.messageType;
+	}
+
+	public void setMessageType(java.lang.String messageType) {
+		this.messageType = messageType;
+	}
+
 	public Order(long orderId, java.time.OffsetDateTime requestedDate,
 			java.time.OffsetDateTime orderDate,
-			java.lang.String shippingCondition, long distanceJobSite_Plant) {
+			java.lang.String shippingCondition, long distanceJobSite_Plant,
+			java.lang.String message, java.lang.String messageType) {
 		this.orderId = orderId;
 		this.requestedDate = requestedDate;
 		this.orderDate = orderDate;
 		this.shippingCondition = shippingCondition;
 		this.distanceJobSite_Plant = distanceJobSite_Plant;
+		this.message = message;
+		this.messageType = messageType;
 	}
 
 }
