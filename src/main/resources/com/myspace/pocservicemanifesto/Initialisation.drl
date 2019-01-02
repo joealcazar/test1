@@ -16,7 +16,7 @@ rule "Setting default values on Order"
 	    order : Order( )
 	then
 	    System.out.println("Rule fired : [" + drools.getRule().getName()+"]");
-//	    order.setMessage("OK")
+	    order.setMessage("OK")
 //	    order.setMessageType("INFO");
 end
 
