@@ -13,11 +13,11 @@ rule "Setting default values on Order"
 	ruleflow-group "initialisation-rules"
 	no-loop true
 	when
-	    order : Order( );
+	    order : Order( )
 	then
 	    System.out.println("Rule fired : [" + drools.getRule().getName()+"]");
-	    order.setMessage("OK")
-	    order.setMessageType("INFO");
+//	    order.setMessage("OK")
+//	    order.setMessageType("INFO");
 end
 
 rule "Setting default values on OrderLine"
@@ -25,7 +25,7 @@ rule "Setting default values on OrderLine"
 	ruleflow-group "initialisation-rules"
 	no-loop true
 	when
-	    orderLine : OrderLine( );
+	    orderLine : OrderLine( )
 	then
 	    System.out.println("Rule fired : [" + drools.getRule().getName()+"]");
 	    
