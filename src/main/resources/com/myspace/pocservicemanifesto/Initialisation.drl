@@ -3,6 +3,7 @@ package com.myspace.pocservicemanifesto;
 
 import com.myspace.pocservicemanifesto.Order;
 import com.myspace.pocservicemanifesto.OrderLine;
+import java.time.OffsetDateTime;
 // declare any global variables here
 // TODO:add a proper logging layer
 // import org.apache.log4j.Logger
@@ -16,8 +17,8 @@ rule "Setting default values on Order"
 	    order : Order( )
 	then
 	    System.out.println("Rule fired : [" + drools.getRule().getName()+"]");
-	    order.setRequestedDate(java.time.OffsetDateTime.parse(order.getRequestedDateStr());
-	    order.setOrderDate(java.time.OffsetDateTime.parse(order.getOrderDateStr()));
+	    order.setRequestedDate(OffsetDateTime.parse(order.getRequestedDateStr()));
+	    order.setOrderDate(OffsetDateTime.parse(order.getOrderDateStr()));
 	    order.setMessage("OK");
 	    order.setMessageType("INFO");
 	    order.setDateDiff(order.getRequestedDate().compareTo(order.getOrderDate()));
