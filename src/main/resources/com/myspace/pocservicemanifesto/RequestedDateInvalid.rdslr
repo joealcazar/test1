@@ -4,6 +4,7 @@ import java.lang.Number;
 
 rule "RequestedDateInvalid"
 	dialect "mvel"
+	ruleflow-group "ValidDates"
 	when
 		The Requested Date Time is older than Created Date Time
 	then
