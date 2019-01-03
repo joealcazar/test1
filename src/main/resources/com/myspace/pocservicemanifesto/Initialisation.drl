@@ -18,6 +18,7 @@ rule "Setting default values on Order"
 	    System.out.println("Rule fired : [" + drools.getRule().getName()+"]");
 	    order.setMessage("OK");
 	    order.setMessageType("INFO");
+	    order.setDateDiff(order.getRequestedDate() - order.getOrderDate());
 end
 
 rule "Setting default values on OrderLine"
