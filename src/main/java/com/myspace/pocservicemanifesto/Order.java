@@ -19,11 +19,17 @@ public class Order implements java.io.Serializable {
 	@org.kie.api.definition.type.Label("Distance Between JobSite & Plant")
 	private long distanceJobSite_Plant;
 
-	@org.kie.api.definition.type.Label(value = "Message")
+	@org.kie.api.definition.type.Label("Message")
 	private java.lang.String message;
 
-	@org.kie.api.definition.type.Label(value = "Message Type")
+	@org.kie.api.definition.type.Label("Message Type")
 	private java.lang.String messageType;
+
+	@org.kie.api.definition.type.Label(value = "Date Diff")
+	private long dateDiff;
+
+	@org.kie.api.definition.type.Label(value = "dateTimeDiff")
+	private long dateTimeDiff;
 
 	public Order() {
 	}
@@ -84,10 +90,27 @@ public class Order implements java.io.Serializable {
 		this.messageType = messageType;
 	}
 
+	public long getDateDiff() {
+		return this.dateDiff;
+	}
+
+	public void setDateDiff(long dateDiff) {
+		this.dateDiff = dateDiff;
+	}
+
+	public long getDateTimeDiff() {
+		return this.dateTimeDiff;
+	}
+
+	public void setDateTimeDiff(long dateTimeDiff) {
+		this.dateTimeDiff = dateTimeDiff;
+	}
+
 	public Order(long orderId, java.time.OffsetDateTime requestedDate,
 			java.time.OffsetDateTime orderDate,
 			java.lang.String shippingCondition, long distanceJobSite_Plant,
-			java.lang.String message, java.lang.String messageType) {
+			java.lang.String message, java.lang.String messageType,
+			long dateDiff, long dateTimeDiff) {
 		this.orderId = orderId;
 		this.requestedDate = requestedDate;
 		this.orderDate = orderDate;
@@ -95,6 +118,8 @@ public class Order implements java.io.Serializable {
 		this.distanceJobSite_Plant = distanceJobSite_Plant;
 		this.message = message;
 		this.messageType = messageType;
+		this.dateDiff = dateDiff;
+		this.dateTimeDiff = dateTimeDiff;
 	}
 
 }
