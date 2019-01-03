@@ -6,7 +6,6 @@ rule "RequestedDateInvalid"
 	dialect "mvel"
 	when
 		The Requested Date Time is older than Created Date Time
-		There is an Order
 	then
 		The Requested Date is not valid
 		Log rule name
