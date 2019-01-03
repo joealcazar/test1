@@ -6,7 +6,7 @@ rule "RequestedDateInvalid"
 	dialect "mvel"
 	ruleflow-group "ValidDates"
 	when
-		There is an Order
+		The Requested Date Time is older than Created Date Time
 	then
 		The Requested Date is not valid
 		Log rule name
