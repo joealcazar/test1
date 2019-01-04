@@ -122,6 +122,7 @@ public class Order implements java.io.Serializable {
 
 	public void setOrderDateStr(java.lang.String orderDateStr) {
 		this.orderDateStr = orderDateStr;
+		this.orderDate = OffsetDateTime.parse(orderDateStr);
 	}
 
 	public java.lang.String getRequestedDateStr() {
@@ -130,6 +131,7 @@ public class Order implements java.io.Serializable {
 
 	public void setRequestedDateStr(java.lang.String requestedDateStr) {
 		this.requestedDateStr = requestedDateStr;
+		this.requestedDate = OffsetDateTime.parse(requestedDateStr);
 	}
 
 	public Order(long orderId, java.time.OffsetDateTime requestedDate,
