@@ -1,0 +1,9 @@
+package com.myspace.pocservicemanifesto;
+
+import java.lang.Number;
+
+rule "DeliveryToday"
+	dialect "mvel"
+	when
+	then
+end
