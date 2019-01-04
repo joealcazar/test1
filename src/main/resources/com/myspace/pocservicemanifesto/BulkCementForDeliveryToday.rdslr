@@ -7,6 +7,7 @@ rule "BulkCementForDeliveryToday"
 	ruleflow-group "ValidDates"
 	when
 		The difference between the created date time and the requested date time is 1 days, the shipping condition selected for the Order is "Delivery" and the distance between JobSite and Plant is more than 3000
+		The load includes product type "Bulk Cement"
 	then
 		Add 1 days to Requested Date
 		Log rule name
