@@ -5,5 +5,7 @@ import java.lang.Number;
 rule "DeliveryToday"
 	dialect "mvel"
 	when
+		The difference between the created date time and the requested date time is 0 days and the shipping condition selected for the Order is Delivery
 	then
+		Log rule name
 end
