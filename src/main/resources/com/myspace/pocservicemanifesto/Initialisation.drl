@@ -17,12 +17,8 @@ rule "Setting default values on Order"
 	    order : Order( )
 	then
 	    System.out.println("Rule fired : [" + drools.getRule().getName()+"]");
-	    order.setRequestedDate(OffsetDateTime.parse(order.getRequestedDateStr()));
-	    order.setOrderDate(OffsetDateTime.parse(order.getOrderDateStr()));
 	    order.setMessage("OK");
 	    order.setMessageType("INFO");
-	    order.setDateDiff(order.getRequestedDate().compareTo(order.getOrderDate()));
-	    System.out.println("date compare : [" + order.getDateDiff() + "]");
 end 
 
 rule "Setting default values on OrderLine"
