@@ -137,8 +137,10 @@ public class Order implements java.io.Serializable {
 	
 	public void addDaysToRequestedDate(int days)
 	{
+	    System.out.println("Adding " + days + " days to requested date");
 	    this.requestedDate = this.requestedDate.plusDays((long)days);
 	    this.requestedDateStr = this.requestedDate.toString();
+	    
 	}
 	
 	public long getDaysBetweenDates()
