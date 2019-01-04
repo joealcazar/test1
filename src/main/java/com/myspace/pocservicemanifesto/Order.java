@@ -141,7 +141,7 @@ public class Order implements java.io.Serializable {
 	    this.requestedDateStr = this.requestedDate.toString();
 	}
 	
-	public int getDaysBetweenDates()
+	public long getDaysBetweenDates()
 	{
 	    return Duration.between(this.requestedDate.toLocalDateTime(), this.orderDate.toLocalDateTime()).toDays();
 	}
