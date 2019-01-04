@@ -133,6 +133,12 @@ public class Order implements java.io.Serializable {
 		this.requestedDateStr = requestedDateStr;
 		this.requestedDate = OffsetDateTime.parse(requestedDateStr);
 	}
+	
+	public void addDaysToRequestedDate(int days)
+	{
+	    this.requestedDate = this.requestedDate.plusDays((long)days);
+	    this.requestedDateStr = this.requestedDate.toString();
+	}
 
 	public Order(long orderId, java.time.OffsetDateTime requestedDate,
 			java.time.OffsetDateTime orderDate,
