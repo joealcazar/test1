@@ -8,6 +8,6 @@ rule "RequestedDateInvalid"
 	when
 		The Requested Date Time is older than Created Date Time
 	then
-		The Requested Date is not valid
+		Set Error message "The requested date time can not be less than the created date time"
 		Log rule name
 end
