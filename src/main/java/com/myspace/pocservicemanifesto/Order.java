@@ -36,11 +36,14 @@ public class Order implements java.io.Serializable {
 	@org.kie.api.definition.type.Label("dateTimeDiff")
 	private long dateTimeDiff;
 
-	@org.kie.api.definition.type.Label(value = "Order Date")
+	@org.kie.api.definition.type.Label("Order Date")
 	private java.lang.String orderDateStr;
 
-	@org.kie.api.definition.type.Label(value = "Requested Date")
+	@org.kie.api.definition.type.Label("Requested Date")
 	private java.lang.String requestedDateStr;
+
+	@org.kie.api.definition.type.Label(value = "Charge")
+	private double charge;
 
 	public Order() {
 	}
@@ -134,20 +137,27 @@ public class Order implements java.io.Serializable {
 		this.requestedDateStr = requestedDateStr;
 		this.requestedDate = OffsetDateTime.parse(requestedDateStr);
 	}
-	
-	public void addDaysToRequestedDate(int days)
-	{
-	    System.out.println("Adding " + days + " days to requested date");
-	    this.requestedDate = this.requestedDate.plusDays((long)days);
-	    this.requestedDateStr = this.requestedDate.toString();
-	    
+
+	public void addDaysToRequestedDate(int days) {
+		System.out.println("Adding " + days + " days to requested date");
+		this.requestedDate = this.requestedDate.plusDays((long) days);
+		this.requestedDateStr = this.requestedDate.toString();
+
 	}
-	
-	public long getDaysBetweenDates()
-	{
-	    long days = Duration.between( this.orderDate.toLocalDateTime(), this.requestedDate.toLocalDateTime()).toDays();
-	    System.out.println("Dias entre fechas " + days);
-	    return days;
+
+	public long getDaysBetweenDates() {
+		long days = Duration.between(this.orderDate.toLocalDateTime(),
+				this.requestedDate.toLocalDateTime()).toDays();
+		System.out.println("Dias entre fechas " + days);
+		return days;
+	}
+
+	public double getCharge() {
+		return this.charge;
+	}
+
+	public void setCharge(double charge) {
+		this.charge = charge;
 	}
 
 	public Order(long orderId, java.time.OffsetDateTime requestedDate,
@@ -155,7 +165,7 @@ public class Order implements java.io.Serializable {
 			java.lang.String shippingCondition, long distanceJobSite_Plant,
 			java.lang.String message, java.lang.String messageType,
 			long dateDiff, long dateTimeDiff, java.lang.String orderDateStr,
-			java.lang.String requestedDateStr) {
+			java.lang.String requestedDateStr, double charge) {
 		this.orderId = orderId;
 		this.requestedDate = requestedDate;
 		this.orderDate = orderDate;
@@ -167,6 +177,7 @@ public class Order implements java.io.Serializable {
 		this.dateTimeDiff = dateTimeDiff;
 		this.orderDateStr = orderDateStr;
 		this.requestedDateStr = requestedDateStr;
+		this.charge = charge;
 	}
 
 }
