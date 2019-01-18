@@ -142,6 +142,7 @@ public class Order implements java.io.Serializable {
 		System.out.println("Adding " + days + " days to requested date");
 		this.requestedDate = this.requestedDate.plusDays((long) days);
 		this.requestedDateStr = this.requestedDate.toString();
+		this.dateDiff = getDaysBetweenDates();
 
 	}
 
@@ -149,6 +150,7 @@ public class Order implements java.io.Serializable {
 		long days = Duration.between(this.orderDate.toLocalDateTime(),
 				this.requestedDate.toLocalDateTime()).toDays();
 		System.out.println("Dias entre fechas " + days);
+		this.dateDiff = days;
 		return days;
 	}
 
@@ -178,6 +180,7 @@ public class Order implements java.io.Serializable {
 		this.orderDateStr = orderDateStr;
 		this.requestedDateStr = requestedDateStr;
 		this.charge = charge;
+		this.dateDiff = getDaysBetweenDates();
 	}
 
 }
